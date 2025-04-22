@@ -113,12 +113,12 @@ async function fetchAndApply(request) {
     return response;
   } else if (slugs.indexOf(url.pathname.slice(1)) > -1) {
     const pageId = SLUG_TO_PAGE[url.pathname.slice(1)];
-    return Response.redirect("https://" + MY_DOMAIN + "/" + pageId, 301);
+    return Response.redirect("https://www.notion.so/" + pageId, 301);
   } else if (
     pages.indexOf(url.pathname.slice(1)) === -1 &&
     url.pathname.slice(1).match(/[0-9a-f]{32}/)
   ) {
-    return Response.redirect('https://' + MY_DOMAIN, 301);
+    return Response.redirect('https://www.notion.so/' + url.pathname.slice(1), 301);
   } else {
     response = await fetch(url.toString(), {
       body: request.body,
@@ -188,6 +188,7 @@ class BodyRewriter {
   element(element) {
     element.append(
       `<script>
+        window.CONFIG = window.CONFIG || {};
         window.CONFIG.domainBaseUrl = 'https://${MY_DOMAIN}';
         const SLUG_TO_PAGE = ${JSON.stringify(this.SLUG_TO_PAGE)};
       </script>${CUSTOM_SCRIPT}`,
