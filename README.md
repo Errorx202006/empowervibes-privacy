@@ -1,11 +1,6 @@
-# Fruition: Free, Open Source Toolkit For Customizing Your Notion Pages
+# EmpowerVibes Privacy Proxy
 
-* Use cases: perfect for your portfolio, blog, landing page, and business site
-* Features: pretty URLs, custom domains, Google Fonts, SEO support, script injection
-* Benefits: completely free, no lock-in, and open source
+This repo hosts a Cloudflare Worker script that serves our Notion-hosted privacy policy at a clean custom domain.
 
-For step-by-step setup instructions, visit https://fruitionsite.com
-
-This repo has 2 independent parts:
-1. [worker.js](https://github.com/stephenou/fruitionsite/blob/master/worker.js) is the Cloudflare Worker script
-2. everything else is a React app that helps generate the Worker script via a UI.
+- Live URL: https://privacy.empowervibes.vercel.app
+- Notion Page: https://dusty-gruyere-e7c.notion.site/Privacy-Policy-1dc6a54fb4df80eaabbcdbcab1c8d236
